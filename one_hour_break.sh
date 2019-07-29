@@ -2,9 +2,13 @@
 readonly BREAK_INTERVAL=900
 readonly LOOP_TIMES=4
 
-for (( i = 0; i < LOOP_TIMES - 1; i++ )); do
-	sleep $BREAK_INTERVAL
+echo "`date`: Start"
+
+for (( i = 1; i < LOOP_TIMES; i++ )); do
+	 sleep $BREAK_INTERVAL
   say "You should move a bit"
+	TMP_TIME=$((i * BREAK_INTERVAL / 60))
+	echo "`date`: move a bit ($TMP_TIME min)"
 done
 
 sleep $BREAK_INTERVAL
